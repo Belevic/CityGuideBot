@@ -14,5 +14,7 @@ For using application follow next steps:
 6) App started.
 
 Check results of application work in Telegram.
-bot name: city_quiz_bot;
+
+bot name: city_quiz_bot
+
 bot token: 1185692796:AAH4_MyuBK6qs3qU2uOhGFtnN-WHom2zpjQ
