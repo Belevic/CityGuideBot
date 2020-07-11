@@ -34,7 +34,7 @@ public class CityService implements EntityService<CityDto> {
 
     @Override
     public CityDto create(CityDto entity) {
-        if(!isExist(entity.getName())){
+        if(!isExist(entity)){
             return mapper.toDto(repository.save(mapper.fromDto(entity)));
         }
         throw new ServiceException("City with such name already exists in database!");
@@ -42,7 +42,7 @@ public class CityService implements EntityService<CityDto> {
 
     @Override
     public CityDto update(CityDto entity) {
-        if(!isExist(entity.getName())){
+        if(!isExist(entity)){
             return mapper.toDto(repository.save(mapper.fromDto(entity)));
         }
         throw new ServiceException("City with such name already exists in database!");
@@ -63,8 +63,9 @@ public class CityService implements EntityService<CityDto> {
         return Objects.isNull(city) ? notExistingMessage : city.getInfo();
     }
 
-    private boolean isExist(String name){
-        return !Objects.isNull(repository.findByName(name));
+    private boolean isExist(CityDto cityDto){
+        City city = repository.findByName(cityDto.getName());
+        return !Objects.isNull(city) && !cityDto.getId().equals(city.getId());
     }
 
     @Override

@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class CityDto extends BaseDto {
 
     @NotBlank(message = "Please, provide city name, it can't be null or consists of spaces only!")
-    @Pattern(regexp = "^[А-Я][а-я]{2,40}$", message = "City name must consist of letters only!")
+    @Pattern(regexp = "^[А-Я][а-яА-Я' ']{2,40}$", message = "City name must consist of letters only!")
     @Size(min = 2,max = 40,message = "City name length should be more than 1 and less than 40 symbols length!")
     private String name;
 

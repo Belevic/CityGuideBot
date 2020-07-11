@@ -34,8 +34,9 @@ public class CityBotController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable @Min(1) Long id) {
+    public Boolean delete(@PathVariable @Min(1) Long id) {
         service.delete(id);
+        return true;
     }
 
     @GetMapping("/{id}")

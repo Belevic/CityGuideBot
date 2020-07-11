@@ -40,7 +40,7 @@ public class CityBot extends TelegramLongPollingBot {
     @Value("${telegram.token}")
     private String token;
 
-    private static final String regexExpression = "[А-Я][а-я]{2,}";
+    private static final String regexExpression = "[А-Я][а-яА-Я' ']{2,}";
 
     private static final String defaultMessage = "Привет пользователь. Я туристический бот по городам. " +
             "Введи название города, который ты бы хотел посетить и я проинформирую тебя о его " +
